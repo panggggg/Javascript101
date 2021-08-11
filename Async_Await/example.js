@@ -23,17 +23,17 @@ const orderUber = function(dateDetails) {
     })
 }
 
-const myDate = function(){
-    date
-        .then(orderUber)
-        .then(function(done) { //done is resolve
-            console.log('We are going on a dinner.')
-            console.log(done);
-        })
-        .catch(function(error) {
-            console.log(error.message);
-        })
+async function myDate() {
+    try{
+        let dateDetails = await date;
+        let message = await orderUber(dateDetails);
+        console.log(message);
+
+    } catch(error) {
+        console.log(error.message);
+    }
 }
-myDate();
 
-
+(async () => {
+    await myDate();
+})();
