@@ -12,12 +12,14 @@
     const res = await fetch(endpoint);
     let data = await res.json();
 
-    data = data.map(user => user.username);
+    return data;
     
     console.log(data);
 }
 
-fetchUsers('https://jsonplaceholder.typicode.com/users');
+fetchUsers('https://jsonplaceholder.typicode.com/users')
+    .then(data => console.log(data.map(user => user.username)));
+
     </script>
 </body>
 </html>
