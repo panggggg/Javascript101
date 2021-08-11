@@ -9,6 +9,8 @@ console.log('newNumber: ', newNumber)
 const array_number = [1, 2, 3, 4, 5]
 const new_array_number = array_number // same address
 
+//const สามารถเปลี่ยนค่าที่ address ได้
+
 new_array_number.push(8)
 
 console.log('array_number: ', array_number) //[ 1, 2, 3, 4, 5, 8 ] 
